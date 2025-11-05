@@ -1,4 +1,7 @@
 import React from 'react';
+// Entry point: render the App component into the #root element.
+// Import Bootstrap's CSS globally so react-bootstrap components are styled.
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';

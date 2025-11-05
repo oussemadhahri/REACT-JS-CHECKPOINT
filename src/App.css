@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+:root{
+  --bg-1: linear-gradient(135deg,#071029 0%,#0f172a 100%);
+  --card-bg: rgba(255,255,255,0.02);
+  --muted: #9aa4b2;
+  --accent: #6d5cff;
+  --glass: rgba(255,255,255,0.06);
+  --radius: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:var(--bg-1);-webkit-font-smoothing:antialiased}
+
+/* NAVBAR */
+.navbar{background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.navbar-brand{font-weight:700;color:var(--accent)!important}
+.nav-link{color:var(--muted)!important}
+.navbar .btn-primary{background:linear-gradient(90deg,var(--accent),#4fb3ff);border:none}
+
+/* NAVBAR BUTTON-LIKE LINKS */
+.navbar .nav-link.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.36rem .7rem;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:var(--muted)!important;
+  font-size:.9rem;
+  transition:all .16s ease;
+}
+.navbar .nav-link.btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.03);
+  color:#fff!important;
+  border-color:rgba(255,255,255,0.08);
+}
+.navbar .nav-link.btn:focus{outline:2px solid rgba(109,92,255,0.18)}
+.navbar .nav-link.btn.btn-primary{
+  background:linear-gradient(90deg,var(--accent),#4fb3ff);
+  color:#fff!important;
+  border:none;
+  box-shadow:0 8px 20px rgba(77,58,255,0.18);
+}
+.navbar .nav-link.btn.btn-outline-light{
+  background:transparent;
+  color:var(--muted)!important;
+  border:1px solid rgba(255,255,255,0.06);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Hero / Carousel */
+.main-carousel .carousel-item img{height:60vh;min-height:300px;object-fit:cover;filter:saturate(1.03) contrast(1.03)}
+.main-carousel .carousel-caption{background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.45));padding:18px;border-radius:8px}
+
+/* Cards */
+.modern-card{background:var(--card-bg);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03);transition:transform .18s ease,box-shadow .18s ease}
+.modern-card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(2,6,23,0.6)}
+.modern-card .card-img-top{height:220px;object-fit:cover;border-top-left-radius:var(--radius);border-top-right-radius:var(--radius)}
+
+.contact-box{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+.photo-name{font-size:.85rem;color:var(--muted)}
+
+/* Responsive tweaks */
+@media (max-width:768px){
+  .main-carousel .carousel-item img{height:38vh}
+  .modern-card .card-img-top{height:160px}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Utilities */
+.text-muted{color:var(--muted)!important}
+.gallery-title{color:#fff;margin-bottom:12px}
