@@ -15,3 +15,4 @@ npm start
 ```
 
 If you want a different project structure or additional libraries, tell me what to include and I will add them.
+# JSX-ET-React-Components-checkpoint
